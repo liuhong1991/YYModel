@@ -23,8 +23,6 @@
 		D97B2D581F36F44A00AD0C9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97B2D561F36F44A00AD0C9D /* LaunchScreen.storyboard */; };
 		D97B2D5B1F36F44A00AD0C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D97B2D5A1F36F44A00AD0C9D /* main.m */; };
 		D99DE7D91F37027200734B10 /* YYWeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D99DE7D71F37023500734B10 /* YYWeiboModel.m */; };
-		D99DE7DB1F3705A400734B10 /* SwiftGithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DE7DA1F3705A400734B10 /* SwiftGithubUser.swift */; };
-		D9CF94451F36FD0A00459BFC /* SwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF94441F36FD0A00459BFC /* SwiftModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,9 +54,7 @@
 		D97B2D5A1F36F44A00AD0C9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D99DE7D71F37023500734B10 /* YYWeiboModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYWeiboModel.m; sourceTree = "<group>"; };
 		D99DE7D81F37023500734B10 /* YYWeiboModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYWeiboModel.h; sourceTree = "<group>"; };
-		D99DE7DA1F3705A400734B10 /* SwiftGithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGithubUser.swift; sourceTree = "<group>"; };
 		D9CF94431F36FD0A00459BFC /* ModelBenchmark-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ModelBenchmark-Bridging-Header.h"; sourceTree = "<group>"; };
-		D9CF94441F36FD0A00459BFC /* SwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftModel.swift; sourceTree = "<group>"; };
 		F01CDD6162FDEBDF135EA02A /* Pods-ModelBenchmark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelBenchmark.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModelBenchmark/Pods-ModelBenchmark.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +125,6 @@
 			children = (
 				D97B2D4E1F36F44A00AD0C9D /* ViewController.h */,
 				D97B2D4F1F36F44A00AD0C9D /* ViewController.m */,
-				D9CF94441F36FD0A00459BFC /* SwiftModel.swift */,
 				D99DE7D31F37014E00734B10 /* GithubUserModel */,
 				D99DE7D41F37015B00734B10 /* WeiboModel */,
 				D96199441F36FDFD00B70581 /* Supporting Files */,
@@ -142,7 +137,6 @@
 			children = (
 				D96199321F36FDA500B70581 /* GitHubUser.h */,
 				D96199331F36FDA500B70581 /* GitHubUser.m */,
-				D99DE7DA1F3705A400734B10 /* SwiftGithubUser.swift */,
 				D961993A1F36FDA500B70581 /* user.json */,
 			);
 			path = GithubUserModel;
@@ -180,7 +174,6 @@
 				D97B2D451F36F44A00AD0C9D /* Frameworks */,
 				D97B2D461F36F44A00AD0C9D /* Resources */,
 				AEDB4A68CDD86A4000CF08EF /* [CP] Embed Pods Frameworks */,
-				73A6CA6E4EC04C98C39C5A74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,34 +233,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73A6CA6E4EC04C98C39C5A74 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ModelBenchmark/Pods-ModelBenchmark-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		857B9B6B140B5186E34CEA26 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ModelBenchmark-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AEDB4A68CDD86A4000CF08EF /* [CP] Embed Pods Frameworks */ = {
@@ -276,9 +257,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ModelBenchmark/Pods-ModelBenchmark-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Argo/Argo.framework",
+				"${BUILT_PRODUCTS_DIR}/FastEasyMapping/FastEasyMapping.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Argo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FastEasyMapping.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Runes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -294,12 +298,10 @@
 			files = (
 				D99DE7D91F37027200734B10 /* YYWeiboModel.m in Sources */,
 				D97B2D501F36F44A00AD0C9D /* ViewController.m in Sources */,
-				D9CF94451F36FD0A00459BFC /* SwiftModel.swift in Sources */,
 				D961993C1F36FDA500B70581 /* DateFormatter.m in Sources */,
 				D961993E1F36FDA500B70581 /* GitHubUser.m in Sources */,
 				D97B2D5B1F36F44A00AD0C9D /* main.m in Sources */,
 				D961993F1F36FDA500B70581 /* JSWeiboModel.m in Sources */,
-				D99DE7DB1F3705A400734B10 /* SwiftGithubUser.swift in Sources */,
 				D96199401F36FDA500B70581 /* MJWeiboModel.m in Sources */,
 				D97B2D4D1F36F44A00AD0C9D /* AppDelegate.m in Sources */,
 				D961993D1F36FDA500B70581 /* FEWeiboModel.m in Sources */,

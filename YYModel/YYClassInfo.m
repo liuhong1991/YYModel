@@ -12,6 +12,7 @@
 #import "YYClassInfo.h"
 #import <objc/runtime.h>
 
+//根据编码方式的字符串类型,返回编码方式YYEncodingType
 YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     char *type = (char *)typeEncoding;
     if (!type) return YYEncodingTypeUnknown;

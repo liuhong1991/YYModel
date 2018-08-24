@@ -15,7 +15,6 @@
 #import "MTWeiboModel.h"
 #import "JSWeiboModel.h"
 #import "MJWeiboModel.h"
-#import "ModelBenchmark-Swift.h"
 
 @implementation ViewController
 
@@ -388,9 +387,6 @@
     
     
     
-    
-    /// Benchmark swift
-    [GithubUserBenchmark benchmark];
     
     
     

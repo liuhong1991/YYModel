@@ -1,0 +1,58 @@
+PODS:
+  - Argo (4.1.2):
+    - Runes (>= 4.0.0)
+  - FastEasyMapping (1.2.2)
+  - Gloss (2.0.1)
+  - HandyJSON (4.1.1)
+  - JSONModel (1.7.0)
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
+  - MJExtension (3.0.15)
+  - ObjectMapper (3.3.0)
+  - Runes (4.1.0)
+  - SwiftyJSON (4.1.0)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - Argo
+  - FastEasyMapping
+  - Gloss
+  - HandyJSON
+  - JSONModel
+  - Mantle
+  - MJExtension
+  - ObjectMapper
+  - SwiftyJSON
+  - YYModel
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Argo
+    - FastEasyMapping
+    - Gloss
+    - HandyJSON
+    - JSONModel
+    - Mantle
+    - MJExtension
+    - ObjectMapper
+    - Runes
+    - SwiftyJSON
+    - YYModel
+
+SPEC CHECKSUMS:
+  Argo: 5db06502fc1222d83011f574243089dab25202ff
+  FastEasyMapping: cc13aa6608aeb171bc0ea895876434a7328a153a
+  Gloss: 1e8743f8de1fbe14a97f220ff901cba91ae5f8f8
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  MJExtension: 3f039575db1b135a20699ad298713b26acec1528
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: b1e3ea942e021b968e6d4964b6c374bdb823c314
+
+COCOAPODS: 1.5.3

@@ -77,14 +77,14 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
 
 
 /**
- Instance variable information.
+ Instance variable information. 实例对象的成员变量信息.
  */
 @interface YYClassIvarInfo : NSObject
 @property (nonatomic, assign, readonly) Ivar ivar;              ///< ivar opaque struct
 @property (nonatomic, strong, readonly) NSString *name;         ///< Ivar's name
 @property (nonatomic, assign, readonly) ptrdiff_t offset;       ///< Ivar's offset
 @property (nonatomic, strong, readonly) NSString *typeEncoding; ///< Ivar's type encoding
-@property (nonatomic, assign, readonly) YYEncodingType type;    ///< Ivar's type
+@property (nonatomic, assign, readonly) YYEncodingType type;    ///< Ivar's type        //类型的编码方式.每个类型都有对应一个编码
 
 /**
  Creates and returns an ivar info object.
@@ -97,7 +97,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
 
 
 /**
- Method information.
+ Method information.    方法信息
  */
 @interface YYClassMethodInfo : NSObject
 @property (nonatomic, assign, readonly) Method method;                  ///< method opaque struct
@@ -106,7 +106,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
 @property (nonatomic, assign, readonly) IMP imp;                        ///< method's implementation
 @property (nonatomic, strong, readonly) NSString *typeEncoding;         ///< method's parameter and return types
 @property (nonatomic, strong, readonly) NSString *returnTypeEncoding;   ///< return value's type
-@property (nullable, nonatomic, strong, readonly) NSArray<NSString *> *argumentTypeEncodings; ///< array of arguments' type
+@property (nullable, nonatomic, strong, readonly) NSArray<NSString *> *argumentTypeEncodings; ///< array of arguments' type 参数编码方式
 
 /**
  Creates and returns a method info object.
@@ -119,7 +119,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
 
 
 /**
- Property information.
+ Property information.      属性信息
  */
 @interface YYClassPropertyInfo : NSObject
 @property (nonatomic, assign, readonly) objc_property_t property; ///< property's opaque struct
@@ -143,7 +143,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
 
 
 /**
- Class information for a class.
+ Class information for a class. 类信息
  */
 @interface YYClassInfo : NSObject
 @property (nonatomic, assign, readonly) Class cls; ///< class object
@@ -163,7 +163,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
  After called this method, `needUpdate` will returns `YES`, and you should call 
  'classInfoWithClass' or 'classInfoWithClassName' to get the updated class info.
  */
-- (void)setNeedUpdate;
+- (void)setNeedUpdate;//更新类信息
 
 /**
  If this method returns `YES`, you should stop using this instance and call
@@ -171,7 +171,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
  
  @return Whether this class info need update.
  */
-- (BOOL)needUpdate;
+- (BOOL)needUpdate;//使用该方法,通过返回值判断是否需要更新类信息.
 
 /**
  Get the class info of a specified Class.
@@ -182,7 +182,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
  @param cls A class.
  @return A class info, or nil if an error occurs.
  */
-+ (nullable instancetype)classInfoWithClass:(Class)cls;
++ (nullable instancetype)classInfoWithClass:(Class)cls;//根据类对象,返回类信息
 
 /**
  Get the class info of a specified Class.
@@ -193,6 +193,7 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding);
  @param className A class name.
  @return A class info, or nil if an error occurs.
  */
+// 根据类名返回类信息
 + (nullable instancetype)classInfoWithClassName:(NSString *)className;
 
 @end
